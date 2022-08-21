@@ -165,6 +165,7 @@ public class frmRegistro extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(null, "Datos Guardados correctamente");
                 }catch (Exception e){
                     JOptionPane.showMessageDialog(null, "Error al guardar datos");
+                    
                 }
             }
         }

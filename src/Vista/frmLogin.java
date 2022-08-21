@@ -4,16 +4,22 @@
  */
 package Vista;
 
-/**
- *
- * @author Wnieto
- */
+import conexion.conexionMysql;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import javax.swing.JOptionPane;
+
 public class frmLogin extends javax.swing.JFrame {
 
     /**
      * Creates new form frmLogin
      */
     public static frmRegistro fr;
+    
+    conexionMysql con=new conexionMysql();
+    Connection cn=con.conectar();
+    
     public frmLogin() {
         initComponents();
         setLocationRelativeTo(null);
@@ -105,6 +111,35 @@ public class frmLogin extends javax.swing.JFrame {
 
     private void btnIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarActionPerformed
         // TODO add your handling code here:
+        String usuario=txtUsuario.getText();
+        String pass=txtPassword.getText();
+        
+        if(!usuario.equals("")||pass.equals("")){
+            try{
+                PreparedStatement ps = cn.prepareStatement("SELECT tipoUsuario FROM `usuario` WHERE correo='"+usuario+"' AND password='"+pass+"'");
+                ResultSet rs=ps.executeQuery();
+                if(rs.next()){
+                    String tipousuario=rs.getString("tipoUsuario");
+                    if(tipousuario.equalsIgnoreCase("Administrador")){
+                        dispose();
+                        frmSeguimiento seg=new frmSeguimiento();
+                        seg.setVisible(true);
+                    }else if(tipousuario.equalsIgnoreCase("Usuario")){
+                        dispose();
+                        frmUsuario usu=new frmUsuario();
+                        usu.setVisible(true);
+                    }
+                    
+                }else{
+                    JOptionPane.showMessageDialog(null,"Usuario o contrasena incorrectos! ");
+                }
+            }catch(Exception e){
+                JOptionPane.showMessageDialog(null,"Error al iniciar sesion! ");
+            }
+        }else{
+            JOptionPane.showMessageDialog(null,"Debe completar los datos! ");
+        }
+        
     }//GEN-LAST:event_btnIngresarActionPerformed
 
     private void btnRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistroActionPerformed
