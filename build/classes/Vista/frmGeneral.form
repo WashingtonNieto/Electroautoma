@@ -41,6 +41,9 @@
   </Layout>
   <SubComponents>
     <Container class="javax.swing.JTabbedPane" name="jtpGeneral">
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jtpGeneralMouseClicked"/>
+      </Events>
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
       <SubComponents>
@@ -368,9 +371,9 @@
                                               <Component id="txtIdInforme" pref="344" max="32767" attributes="0"/>
                                               <Component id="txtIdMuestra" pref="344" max="32767" attributes="0"/>
                                               <Component id="txtReferencia" alignment="0" pref="344" max="32767" attributes="0"/>
-                                              <Component id="txtIdUsuario" alignment="0" pref="344" max="32767" attributes="0"/>
                                               <Component id="txtFechaIngreso" alignment="0" max="32767" attributes="0"/>
                                               <Component id="txtFechaMaximaEmision" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="cbxUsuario" alignment="0" max="32767" attributes="0"/>
                                           </Group>
                                       </Group>
                                       <Component id="lblDescripcion" min="-2" max="-2" attributes="0"/>
@@ -418,8 +421,8 @@
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="txtIdUsuario" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="lblCodigoUsuario" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="cbxUsuario" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
@@ -447,7 +450,7 @@
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="jScrollPane2" min="-2" pref="150" max="-2" attributes="0"/>
-                          <EmptySpace pref="21" max="32767" attributes="0"/>
+                          <EmptySpace pref="19" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -493,8 +496,6 @@
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="txtIdInforme">
-                </Component>
-                <Component class="javax.swing.JTextField" name="txtIdUsuario">
                 </Component>
                 <Component class="javax.swing.JLabel" name="lblFechaIngreso">
                   <Properties>
@@ -554,6 +555,9 @@
                           <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                         </Property>
                       </Properties>
+                      <Events>
+                        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tblMuestrasMouseClicked"/>
+                      </Events>
                     </Component>
                   </SubComponents>
                 </Container>
@@ -574,6 +578,19 @@
                   <Properties>
                     <Property name="dateFormatString" type="java.lang.String" value="yyy-MM-dd"/>
                   </Properties>
+                </Component>
+                <Component class="javax.swing.JComboBox" name="cbxUsuario">
+                  <Properties>
+                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                      <StringArray count="0"/>
+                    </Property>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cbxUsuarioActionPerformed"/>
+                  </Events>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                  </AuxValues>
                 </Component>
               </SubComponents>
             </Container>

@@ -4,25 +4,22 @@
  */
 package Controlador;
 
+import Modelo.Cliente;
 import Modelo.Usuario;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 /**
  *
  * @author Wnieto
  */
-public class UsuarioControlador implements ActionListener{
+public class UsuarioControlador {
 
 
-    
-    
-    
-    
-    
-    @Override
-    public void actionPerformed(ActionEvent e) {
+    public ArrayList<Usuario> SelectUsuarios(){
+        Usuario usuario = new Usuario();
+        return usuario.select();
     }
-
     
 }

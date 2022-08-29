@@ -6,14 +6,18 @@ package Vista;
 
 import Controlador.ClienteControlador;
 import Controlador.MuestraControlador;
+import Controlador.UsuarioControlador;
+
 import Modelo.Cliente;
 import Modelo.Muestra;
 import Modelo.Funciones;
+import Modelo.Usuario;
 
 import conexion.conexionMysql;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.util.ArrayList;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
@@ -74,7 +78,6 @@ public class frmGeneral extends javax.swing.JFrame {
         lblCodigoInforme = new javax.swing.JLabel();
         lblCodigoUsuario = new javax.swing.JLabel();
         txtIdInforme = new javax.swing.JTextField();
-        txtIdUsuario = new javax.swing.JTextField();
         lblFechaIngreso = new javax.swing.JLabel();
         lblFechaMaximaEmision = new javax.swing.JLabel();
         btnCrearMuestra = new javax.swing.JButton();
@@ -86,9 +89,16 @@ public class frmGeneral extends javax.swing.JFrame {
         btnLimpiarCamposMuestra = new javax.swing.JButton();
         txtFechaIngreso = new com.toedter.calendar.JDateChooser();
         txtFechaMaximaEmision = new com.toedter.calendar.JDateChooser();
+        cbxUsuario = new javax.swing.JComboBox<>();
         jpSeguimiento = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jtpGeneral.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jtpGeneralMouseClicked(evt);
+            }
+        });
 
         lblTelefono.setText("Teléfono");
 
@@ -331,6 +341,11 @@ public class frmGeneral extends javax.swing.JFrame {
 
             }
         ));
+        tblMuestras.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblMuestrasMouseClicked(evt);
+            }
+        });
         jScrollPane2.setViewportView(tblMuestras);
 
         btnLimpiarCamposMuestra.setText("Limpiar Campos");
@@ -343,6 +358,12 @@ public class frmGeneral extends javax.swing.JFrame {
         txtFechaIngreso.setDateFormatString("yyy-MM-dd");
 
         txtFechaMaximaEmision.setDateFormatString("yyy-MM-dd");
+
+        cbxUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbxUsuarioActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -369,9 +390,9 @@ public class frmGeneral extends javax.swing.JFrame {
                                     .addComponent(txtIdInforme, javax.swing.GroupLayout.DEFAULT_SIZE, 344, Short.MAX_VALUE)
                                     .addComponent(txtIdMuestra, javax.swing.GroupLayout.DEFAULT_SIZE, 344, Short.MAX_VALUE)
                                     .addComponent(txtReferencia, javax.swing.GroupLayout.DEFAULT_SIZE, 344, Short.MAX_VALUE)
-                                    .addComponent(txtIdUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, 344, Short.MAX_VALUE)
                                     .addComponent(txtFechaIngreso, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(txtFechaMaximaEmision, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                    .addComponent(txtFechaMaximaEmision, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(cbxUsuario, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                             .addComponent(lblDescripcion)
                             .addComponent(lblReferencia)
                             .addComponent(txtDescripcion))
@@ -408,8 +429,8 @@ public class frmGeneral extends javax.swing.JFrame {
                     .addComponent(lblReferencia))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtIdUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblCodigoUsuario))
+                    .addComponent(lblCodigoUsuario)
+                    .addComponent(cbxUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblFechaIngreso)
@@ -432,7 +453,7 @@ public class frmGeneral extends javax.swing.JFrame {
                     .addComponent(btnBorrarMuestra))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addContainerGap(19, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jpMuestrasLayout = new javax.swing.GroupLayout(jpMuestras);
@@ -488,7 +509,16 @@ public class frmGeneral extends javax.swing.JFrame {
 
     ClienteControlador controladorCliente = new ClienteControlador();
     MuestraControlador controladorMuestra = new MuestraControlador();
+    UsuarioControlador controladorUsuario = new UsuarioControlador();
     Funciones funciones = new Funciones();
+    
+    private void formWindowOpened(java.awt.event.WindowEvent evt){
+        llenarTablaClientes();
+        llenarTablaMuestras();
+
+        llenarComboUsuarios();
+    }
+    
 
     private void txtTelefonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTelefonoActionPerformed
         // TODO add your handling code here:
@@ -582,7 +612,8 @@ public class frmGeneral extends javax.swing.JFrame {
 
         int id_informe = Integer.parseInt(txtIdInforme.getText());
         String referencia = txtReferencia .getText();
-        int id_usuario = Integer.parseInt(txtIdUsuario.getText());
+        Usuario usuario = (Usuario) cbxUsuario.getSelectedItem();
+        int id_usuario = usuario.id;
         String fecha_ingreso = ((JTextField)txtFechaIngreso.getDateEditor().getUiComponent()).getText();
         String fecha_max_emision = ((JTextField)txtFechaMaximaEmision.getDateEditor().getUiComponent()).getText();
         String descripcion = txtDescripcion.getText();
@@ -616,7 +647,15 @@ public class frmGeneral extends javax.swing.JFrame {
         } else {
             txtIdInforme.setText(String.valueOf(muestra.id_informe));
             txtReferencia.setText(muestra.referencia);
-            txtIdUsuario.setText(String.valueOf(muestra.id_usuario));
+            DefaultComboBoxModel modelo = (DefaultComboBoxModel) cbxUsuario.getModel();
+            for(int i = 0; i < modelo.getSize(); i++){
+                Usuario usuario = (Usuario) modelo.getElementAt(i);
+                if(usuario.id == usuario.id){
+                    cbxUsuario.setSelectedItem(usuario);
+                    break;
+                }
+            }
+            //txtIdUsuario.setText(String.valueOf(muestra.id_usuario));
             txtFechaIngreso.setDate(funciones.StringADate(muestra.fecha_ingreso));
             txtFechaMaximaEmision.setDate(funciones.StringADate(muestra.fecha_max_emision));
             
@@ -630,7 +669,10 @@ public class frmGeneral extends javax.swing.JFrame {
         
         int id_informe = Integer.parseInt(txtIdInforme.getText());
         String referencia = txtReferencia .getText();
-        int id_usuario = Integer.parseInt(txtIdUsuario.getText());
+        
+        Usuario usuario = (Usuario)(cbxUsuario.getSelectedItem());
+        int id_usuario = usuario.id;
+        
         String fecha_ingreso = ((JTextField)txtFechaIngreso.getDateEditor().getUiComponent()).getText();
         String fecha_max_emision = ((JTextField)txtFechaMaximaEmision.getDateEditor().getUiComponent()).getText();
         String descripcion = txtDescripcion.getText();
@@ -667,6 +709,23 @@ public class frmGeneral extends javax.swing.JFrame {
         // TODO add your handling code here:
         limpiarCamposCliente();
     }//GEN-LAST:event_btnLimpiarCamposClienteActionPerformed
+
+    private void cbxUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxUsuarioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbxUsuarioActionPerformed
+
+    private void tblMuestrasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblMuestrasMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tblMuestrasMouseClicked
+
+    private void jtpGeneralMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jtpGeneralMouseClicked
+        // TODO add your handling code here:
+        
+        llenarTablaClientes();
+        llenarTablaMuestras();
+        llenarComboUsuarios();
+        
+    }//GEN-LAST:event_jtpGeneralMouseClicked
 
     /**
      * @param args the command line arguments
@@ -743,6 +802,10 @@ public class frmGeneral extends javax.swing.JFrame {
         Object[] encabezados = {"Id_muestra", "Id_informe","Referencia","Id_usuario","Fecha_ingreso","Fecha_max_emision","Descripcion"};
         DefaultTableModel modelo = new DefaultTableModel(datos, encabezados);
         tblMuestras.setModel(modelo);
+        
+            
+          
+        
     }
 
     public void limpiarCamposMuestras(){
@@ -750,7 +813,7 @@ public class frmGeneral extends javax.swing.JFrame {
             txtIdMuestra.setText("");
             txtIdInforme.setText("");
             txtReferencia.setText("");
-            txtIdUsuario.setText("");
+            cbxUsuario.list();
             txtFechaIngreso.setDate(null);
             txtFechaMaximaEmision.setDate(null);
             txtDescripcion.setText("");
@@ -769,6 +832,17 @@ public class frmGeneral extends javax.swing.JFrame {
         
             txtId.requestFocus();            
     }
+    
+    
+    public void llenarComboUsuarios(){
+        ArrayList<Usuario> listaUsuarios = controladorUsuario.SelectUsuarios();
+        DefaultComboBoxModel modeloUsuarios = new DefaultComboBoxModel();
+        for (Usuario usuario : listaUsuarios){
+            modeloUsuarios.addElement(usuario);
+        }
+        cbxUsuario.setModel(modeloUsuarios);
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnActualizarCliente;
     private javax.swing.JButton btnActualizarMuestra;
@@ -780,6 +854,7 @@ public class frmGeneral extends javax.swing.JFrame {
     private javax.swing.JButton btnCrearMuestra;
     private javax.swing.JButton btnLimpiarCamposCliente;
     private javax.swing.JButton btnLimpiarCamposMuestra;
+    private javax.swing.JComboBox<String> cbxUsuario;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
@@ -815,7 +890,6 @@ public class frmGeneral extends javax.swing.JFrame {
     private javax.swing.JTextField txtId;
     private javax.swing.JTextField txtIdInforme;
     private javax.swing.JTextField txtIdMuestra;
-    private javax.swing.JTextField txtIdUsuario;
     private javax.swing.JTextField txtNit;
     private javax.swing.JTextField txtNombre;
     private javax.swing.JTextField txtReferencia;
