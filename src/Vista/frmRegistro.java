@@ -151,8 +151,8 @@ public class frmRegistro extends javax.swing.JFrame {
         String usuario = txtUsuario.getText();
         String password = txtPassword.getText();
         String tipoUsuario = cbxTipoUsuario.getSelectedItem().toString();
-        
-        if(nombre.isEmpty()||apellido.isEmpty()||correo.isEmpty()||usuario.isEmpty()||password.isEmpty()){
+
+       if(nombre.isEmpty()||apellido.isEmpty()||correo.isEmpty()||usuario.isEmpty()||password.isEmpty()){
             JOptionPane.showMessageDialog(null,"Debe completar los datos! ");
         }else{
             if(tipoUsuario.equalsIgnoreCase("Seleccionar")){
@@ -169,6 +169,10 @@ public class frmRegistro extends javax.swing.JFrame {
                 }
             }
         }
+     
+        frmRegistro frmregistro = new frmRegistro();
+        frmregistro.setVisible(false);
+        dispose();
     }//GEN-LAST:event_btnRegistrarActionPerformed
 
     /**

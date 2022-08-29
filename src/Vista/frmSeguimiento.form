@@ -1,0 +1,427 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <Properties>
+    <Property name="defaultCloseOperation" type="int" value="3"/>
+  </Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
+  </SyntheticProperties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="lblIngresoDatos" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+          </Group>
+          <Group type="102" attributes="0">
+              <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="lblNumeroDiasEntrega" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblFechaIngresoMuestras" min="-2" pref="147" max="-2" attributes="0"/>
+                                  <Component id="lblCodigoCliente" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblFechaObjetivoInforme" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="txtNDeDiasDeEntrega" alignment="0" min="-2" pref="185" max="-2" attributes="0"/>
+                                  <Component id="txtFechaIngresoMuestras" min="-2" pref="185" max="-2" attributes="0"/>
+                                  <Component id="txtObjetivoInforme" min="-2" pref="185" max="-2" attributes="0"/>
+                                  <Component id="txtIdCodigoCliente" min="-2" pref="185" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="lblHiloIncandescente" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblChoqueElectrico" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblCorrosionOxidacion" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblAdherencia" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblSeccionTransversal" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="cbxHiloIncandescente" min="-2" pref="185" max="-2" attributes="0"/>
+                                  <Component id="cbxChoqueElectrico" min="-2" pref="185" max="-2" attributes="0"/>
+                                  <Component id="cbxCorrosionOxidacion" min="-2" pref="185" max="-2" attributes="0"/>
+                                  <Component id="cbxAdherencia" min="-2" pref="185" max="-2" attributes="0"/>
+                                  <Component id="jComboBox5" min="-2" pref="185" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                      </Group>
+                      <EmptySpace min="-2" pref="72" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="lblNNotaPedido" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" alignment="0" groupAlignment="1" attributes="0">
+                              <Component id="lblNombreDocumentoNormativo" min="-2" max="-2" attributes="0"/>
+                              <Group type="102" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="lblMuestraCliente" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="lblNInforme" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="lblProceso" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="txtNInforme" min="-2" pref="185" max="-2" attributes="0"/>
+                                      <Component id="txtProceso" min="-2" pref="185" max="-2" attributes="0"/>
+                                      <Component id="txtIdMuestraCliente" min="-2" pref="185" max="-2" attributes="0"/>
+                                      <Component id="txtNNotaPedido" alignment="0" min="-2" pref="185" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <Component id="txtNombreDocumentoNormativo5" alignment="1" min="-2" pref="185" max="-2" attributes="0"/>
+                              <Component id="txtNombreDocumentoNormativo1" alignment="1" min="-2" pref="185" max="-2" attributes="0"/>
+                              <Component id="txtNombreDocumentoNormativo2" alignment="1" min="-2" pref="185" max="-2" attributes="0"/>
+                              <Component id="txtNombreDocumentoNormativo3" alignment="1" min="-2" pref="185" max="-2" attributes="0"/>
+                              <Component id="txtNombreDocumentoNormativo4" alignment="1" min="-2" pref="185" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                  </Group>
+                  <Component id="jLabel1" alignment="0" min="-2" pref="350" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="22" max="32767" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
+                      <Component id="btnAgregar" min="-2" pref="92" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="75" max="-2" attributes="0"/>
+                      <Component id="btnEliminar" min="-2" pref="92" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
+                      <Component id="btnGuardar" min="-2" pref="92" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="136" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="315" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <Component id="lblIngresoDatos" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+              <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="44" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="lblCodigoCliente" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" alignment="1" groupAlignment="3" attributes="0">
+                      <Component id="txtProceso" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblProceso" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Component id="txtIdCodigoCliente" alignment="1" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="txtNDeDiasDeEntrega" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblMuestraCliente" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtIdMuestraCliente" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblNumeroDiasEntrega" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="lblFechaIngresoMuestras" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtFechaIngresoMuestras" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="lblNInforme" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtNInforme" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                              <Component id="lblFechaObjetivoInforme" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtObjetivoInforme" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                  </Group>
+                  <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                      <Component id="lblNNotaPedido" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtNNotaPedido" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblNombreDocumentoNormativo" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lblHiloIncandescente" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtNombreDocumentoNormativo1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="cbxHiloIncandescente" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lblChoqueElectrico" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtNombreDocumentoNormativo2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="cbxChoqueElectrico" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lblCorrosionOxidacion" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtNombreDocumentoNormativo3" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="cbxCorrosionOxidacion" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lblAdherencia" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtNombreDocumentoNormativo4" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="cbxAdherencia" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lblSeccionTransversal" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtNombreDocumentoNormativo5" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jComboBox5" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="btnAgregar" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                  <Component id="btnGuardar" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                  <Component id="btnEliminar" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JLabel" name="jLabel1">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="14" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Sustancia, Material, Elemento o Producto a Ensayar"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblCodigoCliente">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Codigo Cliente"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtNDeDiasDeEntrega">
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblNumeroDiasEntrega">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="N&#xb0; de d&#xed;as de entregas"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblFechaObjetivoInforme">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Fecha objetivo informe"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblIngresoDatos">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Ingrese Datos"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblMuestraCliente">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="ID muestra cliente"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblNNotaPedido">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="N&#xb0; nota pedido"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblProceso">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Proceso"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblNInforme">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="N&#xb0; informe"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblFechaIngresoMuestras">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Fecha ingreso muestras"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtFechaIngresoMuestras">
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtObjetivoInforme">
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtProceso">
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtIdMuestraCliente">
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtNNotaPedido">
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtNInforme">
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel2">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="14" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="SEGUIMIENTO"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblHiloIncandescente">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Hilo incandescente"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblChoqueElectrico">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Choque el&#xe9;ctrico"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblCorrosionOxidacion">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Corrosi&#xf3;n - Oxidaci&#xf3;n"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblAdherencia">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Adherencia"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblSeccionTransversal">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Secci&#xf3;n Transversal"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtIdCodigoCliente">
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblNombreDocumentoNormativo">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="14" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Nombre del documento normativo"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtNombreDocumentoNormativo5">
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtNombreDocumentoNormativo1">
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtNombreDocumentoNormativo2">
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtNombreDocumentoNormativo3">
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtNombreDocumentoNormativo4">
+    </Component>
+    <Component class="javax.swing.JButton" name="btnAgregar">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="AGREGAR"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAgregarActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnGuardar">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="GUARDAR"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnGuardarActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnEliminar">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="ELIMINAR"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEliminarActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="cbxHiloIncandescente">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="5">
+            <StringItem index="0" value="Productos finales (pol&#xed;meros)"/>
+            <StringItem index="1" value="Clavijas y tomacorrientes"/>
+            <StringItem index="2" value="Interruptores"/>
+            <StringItem index="3" value="Drivers/controladores"/>
+            <StringItem index="4" value="Luminarias/Bombillas"/>
+          </StringArray>
+        </Property>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="cbxChoqueElectrico">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="4">
+            <StringItem index="0" value="Luminarias/Bombillas"/>
+            <StringItem index="1" value="Clavijas y tomacorrientes"/>
+            <StringItem index="2" value="Interruptores"/>
+            <StringItem index="3" value="Drivers/controladores"/>
+          </StringArray>
+        </Property>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="cbxCorrosionOxidacion">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="4">
+            <StringItem index="0" value="Luminarias/Bombillas"/>
+            <StringItem index="1" value="Clavijas y tomacorrientes"/>
+            <StringItem index="2" value="Interruptores"/>
+            <StringItem index="3" value="Drivers/controladores"/>
+          </StringArray>
+        </Property>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="cbxAdherencia">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="1">
+            <StringItem index="0" value="Productos con recubrimiento y sustrato met&#xe1;lico"/>
+          </StringArray>
+        </Property>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="jComboBox5">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="1">
+            <StringItem index="0" value="Conductores el&#xe9;ctricos"/>
+          </StringArray>
+        </Property>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+      </AuxValues>
+    </Component>
+  </SubComponents>
+</Form>
