@@ -8,11 +8,14 @@ import Controlador.ClienteControlador;
 import Controlador.MuestraControlador;
 import Modelo.Cliente;
 import Modelo.Muestra;
+import Modelo.Funciones;
+
 import conexion.conexionMysql;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 
 public class frmGeneral extends javax.swing.JFrame {
@@ -73,9 +76,7 @@ public class frmGeneral extends javax.swing.JFrame {
         txtIdInforme = new javax.swing.JTextField();
         txtIdUsuario = new javax.swing.JTextField();
         lblFechaIngreso = new javax.swing.JLabel();
-        txtFechaIngreso = new javax.swing.JTextField();
         lblFechaMaximaEmision = new javax.swing.JLabel();
-        txtFechaMaximaEmision = new javax.swing.JTextField();
         btnCrearMuestra = new javax.swing.JButton();
         btnBuscarMuestra = new javax.swing.JButton();
         btnActualizarMuestra = new javax.swing.JButton();
@@ -83,6 +84,8 @@ public class frmGeneral extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         tblMuestras = new javax.swing.JTable();
         btnLimpiarCamposMuestra = new javax.swing.JButton();
+        txtFechaIngreso = new com.toedter.calendar.JDateChooser();
+        txtFechaMaximaEmision = new com.toedter.calendar.JDateChooser();
         jpSeguimiento = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -337,6 +340,10 @@ public class frmGeneral extends javax.swing.JFrame {
             }
         });
 
+        txtFechaIngreso.setDateFormatString("yyy-MM-dd");
+
+        txtFechaMaximaEmision.setDateFormatString("yyy-MM-dd");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -358,13 +365,13 @@ public class frmGeneral extends javax.swing.JFrame {
                                     .addComponent(lblFechaIngreso)
                                     .addComponent(lblFechaMaximaEmision))
                                 .addGap(61, 61, 61)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtIdInforme, javax.swing.GroupLayout.PREFERRED_SIZE, 344, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtIdMuestra, javax.swing.GroupLayout.PREFERRED_SIZE, 344, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtReferencia, javax.swing.GroupLayout.PREFERRED_SIZE, 344, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtIdUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 344, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtFechaIngreso, javax.swing.GroupLayout.PREFERRED_SIZE, 344, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtFechaMaximaEmision, javax.swing.GroupLayout.PREFERRED_SIZE, 344, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(txtIdInforme, javax.swing.GroupLayout.DEFAULT_SIZE, 344, Short.MAX_VALUE)
+                                    .addComponent(txtIdMuestra, javax.swing.GroupLayout.DEFAULT_SIZE, 344, Short.MAX_VALUE)
+                                    .addComponent(txtReferencia, javax.swing.GroupLayout.DEFAULT_SIZE, 344, Short.MAX_VALUE)
+                                    .addComponent(txtIdUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, 344, Short.MAX_VALUE)
+                                    .addComponent(txtFechaIngreso, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(txtFechaMaximaEmision, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                             .addComponent(lblDescripcion)
                             .addComponent(lblReferencia)
                             .addComponent(txtDescripcion))
@@ -374,7 +381,7 @@ public class frmGeneral extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addGap(39, 39, 39)
                 .addComponent(btnCrearMuestra, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 101, Short.MAX_VALUE)
                 .addComponent(btnBuscarMuestra, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(88, 88, 88)
                 .addComponent(btnActualizarMuestra, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -404,14 +411,14 @@ public class frmGeneral extends javax.swing.JFrame {
                     .addComponent(txtIdUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblCodigoUsuario))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtFechaIngreso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblFechaIngreso))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblFechaIngreso)
+                    .addComponent(txtFechaIngreso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtFechaMaximaEmision, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblFechaMaximaEmision))
-                .addGap(16, 16, 16)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblFechaMaximaEmision)
+                    .addComponent(txtFechaMaximaEmision, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(13, 13, 13)
                 .addComponent(lblDescripcion)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -425,7 +432,7 @@ public class frmGeneral extends javax.swing.JFrame {
                     .addComponent(btnBorrarMuestra))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(18, Short.MAX_VALUE))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jpMuestrasLayout = new javax.swing.GroupLayout(jpMuestras);
@@ -481,6 +488,7 @@ public class frmGeneral extends javax.swing.JFrame {
 
     ClienteControlador controladorCliente = new ClienteControlador();
     MuestraControlador controladorMuestra = new MuestraControlador();
+    Funciones funciones = new Funciones();
 
     private void txtTelefonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTelefonoActionPerformed
         // TODO add your handling code here:
@@ -575,8 +583,8 @@ public class frmGeneral extends javax.swing.JFrame {
         int id_informe = Integer.parseInt(txtIdInforme.getText());
         String referencia = txtReferencia .getText();
         int id_usuario = Integer.parseInt(txtIdUsuario.getText());
-        String fecha_ingreso = txtFechaIngreso.getText();
-        String fecha_max_emision = txtFechaMaximaEmision.getText();
+        String fecha_ingreso = ((JTextField)txtFechaIngreso.getDateEditor().getUiComponent()).getText();
+        String fecha_max_emision = ((JTextField)txtFechaMaximaEmision.getDateEditor().getUiComponent()).getText();
         String descripcion = txtDescripcion.getText();
         
         
@@ -609,34 +617,44 @@ public class frmGeneral extends javax.swing.JFrame {
             txtIdInforme.setText(String.valueOf(muestra.id_informe));
             txtReferencia.setText(muestra.referencia);
             txtIdUsuario.setText(String.valueOf(muestra.id_usuario));
-            txtFechaIngreso.setText(muestra.fecha_ingreso);
-            txtFechaMaximaEmision.setText(muestra.fecha_max_emision);
+            txtFechaIngreso.setDate(funciones.StringADate(muestra.fecha_ingreso));
+            txtFechaMaximaEmision.setDate(funciones.StringADate(muestra.fecha_max_emision));
+            
+            
             txtDescripcion.setText(muestra.descripcion);
         }
     }//GEN-LAST:event_btnBuscarMuestraActionPerformed
 
     private void btnActualizarMuestraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarMuestraActionPerformed
         // TODO add your handling code here:
-        int id = Integer.parseInt(txtIdMuestra.getText());
-        String nombre = txtIdInforme.getText();
-        String nit = txtReferencia.getText();
-        String contacto = txtIdUsuario.getText();
-        String telefono = txtFechaIngreso.getText();
-        String direccion = txtFechaMaximaEmision.getText();
-        String email = txtDescripcion.getText();
-
-        boolean seActualizo = controladorCliente.updateCliente(id, nombre, nit, contacto, telefono, direccion, email);
+        
+        int id_informe = Integer.parseInt(txtIdInforme.getText());
+        String referencia = txtReferencia .getText();
+        int id_usuario = Integer.parseInt(txtIdUsuario.getText());
+        String fecha_ingreso = ((JTextField)txtFechaIngreso.getDateEditor().getUiComponent()).getText();
+        String fecha_max_emision = ((JTextField)txtFechaMaximaEmision.getDateEditor().getUiComponent()).getText();
+        String descripcion = txtDescripcion.getText();
+       
+        
+        boolean seActualizo = controladorMuestra.updateMuestra(id_usuario, id_informe, referencia, id_usuario, fecha_ingreso, fecha_max_emision, descripcion);
         if (seActualizo) {
-            JOptionPane.showMessageDialog(this, "El cliente se actualizó correctamente");
+            JOptionPane.showMessageDialog(this, "la muestra se actualizó correctamente");
         } else {
-            JOptionPane.showMessageDialog(this, "Hubo un error al actualizar el cliente");
+            JOptionPane.showMessageDialog(this, "Hubo un error al actualizar la muestra");
         }
 
-        llenarTablaClientes();
+        llenarTablaMuestras();
     }//GEN-LAST:event_btnActualizarMuestraActionPerformed
 
     private void btnBorrarMuestraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBorrarMuestraActionPerformed
         // TODO add your handling code here:
+        int id = Integer.parseInt(txtIdMuestra.getText());
+        if (controladorMuestra.deleteMuestra(id)) {
+            JOptionPane.showMessageDialog(this, "La muestra se eliminó!");
+        } else {
+            JOptionPane.showMessageDialog(this, "Ha ocurrido un error la muestra no se eliminó!");
+        }
+        llenarTablaMuestras();
     }//GEN-LAST:event_btnBorrarMuestraActionPerformed
 
     private void btnLimpiarCamposMuestraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarCamposMuestraActionPerformed
@@ -733,8 +751,8 @@ public class frmGeneral extends javax.swing.JFrame {
             txtIdInforme.setText("");
             txtReferencia.setText("");
             txtIdUsuario.setText("");
-            txtFechaIngreso.setText("");
-            txtFechaMaximaEmision.setText("");
+            txtFechaIngreso.setDate(null);
+            txtFechaMaximaEmision.setDate(null);
             txtDescripcion.setText("");
         
             txtIdMuestra.requestFocus();            
@@ -792,8 +810,8 @@ public class frmGeneral extends javax.swing.JFrame {
     private javax.swing.JTextField txtDescripcion;
     private javax.swing.JTextField txtDireccion;
     private javax.swing.JTextField txtEmail;
-    private javax.swing.JTextField txtFechaIngreso;
-    private javax.swing.JTextField txtFechaMaximaEmision;
+    private com.toedter.calendar.JDateChooser txtFechaIngreso;
+    private com.toedter.calendar.JDateChooser txtFechaMaximaEmision;
     private javax.swing.JTextField txtId;
     private javax.swing.JTextField txtIdInforme;
     private javax.swing.JTextField txtIdMuestra;

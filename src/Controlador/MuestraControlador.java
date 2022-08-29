@@ -7,6 +7,7 @@ package Controlador;
 import Modelo.Cliente;
 import Modelo.Muestra;
 import java.util.ArrayList;
+import javax.swing.JTextField;
 
 /**
  *

@@ -364,13 +364,13 @@
                                               <Component id="lblFechaMaximaEmision" alignment="0" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                           <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="txtIdInforme" min="-2" pref="344" max="-2" attributes="0"/>
-                                              <Component id="txtIdMuestra" min="-2" pref="344" max="-2" attributes="0"/>
-                                              <Component id="txtReferencia" alignment="0" min="-2" pref="344" max="-2" attributes="0"/>
-                                              <Component id="txtIdUsuario" alignment="0" min="-2" pref="344" max="-2" attributes="0"/>
-                                              <Component id="txtFechaIngreso" alignment="0" min="-2" pref="344" max="-2" attributes="0"/>
-                                              <Component id="txtFechaMaximaEmision" min="-2" pref="344" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                              <Component id="txtIdInforme" pref="344" max="32767" attributes="0"/>
+                                              <Component id="txtIdMuestra" pref="344" max="32767" attributes="0"/>
+                                              <Component id="txtReferencia" alignment="0" pref="344" max="32767" attributes="0"/>
+                                              <Component id="txtIdUsuario" alignment="0" pref="344" max="32767" attributes="0"/>
+                                              <Component id="txtFechaIngreso" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="txtFechaMaximaEmision" alignment="0" max="32767" attributes="0"/>
                                           </Group>
                                       </Group>
                                       <Component id="lblDescripcion" min="-2" max="-2" attributes="0"/>
@@ -386,7 +386,7 @@
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
                           <Component id="btnCrearMuestra" min="-2" pref="122" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
+                          <EmptySpace pref="101" max="32767" attributes="0"/>
                           <Component id="btnBuscarMuestra" min="-2" pref="122" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="88" max="-2" attributes="0"/>
                           <Component id="btnActualizarMuestra" min="-2" pref="122" max="-2" attributes="0"/>
@@ -422,16 +422,16 @@
                               <Component id="lblCodigoUsuario" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="txtFechaIngreso" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="lblFechaIngreso" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="lblFechaIngreso" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtFechaIngreso" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="txtFechaMaximaEmision" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="lblFechaMaximaEmision" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="lblFechaMaximaEmision" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtFechaMaximaEmision" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
                           <Component id="lblDescripcion" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="1" attributes="0">
@@ -447,7 +447,7 @@
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="jScrollPane2" min="-2" pref="150" max="-2" attributes="0"/>
-                          <EmptySpace pref="18" max="32767" attributes="0"/>
+                          <EmptySpace pref="21" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -501,14 +501,10 @@
                     <Property name="text" type="java.lang.String" value="Fecha de Ingreso"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="txtFechaIngreso">
-                </Component>
                 <Component class="javax.swing.JLabel" name="lblFechaMaximaEmision">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Fecha M&#xe1;xima Emisi&#xf3;n"/>
                   </Properties>
-                </Component>
-                <Component class="javax.swing.JTextField" name="txtFechaMaximaEmision">
                 </Component>
                 <Component class="javax.swing.JButton" name="btnCrearMuestra">
                   <Properties>
@@ -568,6 +564,16 @@
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnLimpiarCamposMuestraActionPerformed"/>
                   </Events>
+                </Component>
+                <Component class="com.toedter.calendar.JDateChooser" name="txtFechaIngreso">
+                  <Properties>
+                    <Property name="dateFormatString" type="java.lang.String" value="yyy-MM-dd"/>
+                  </Properties>
+                </Component>
+                <Component class="com.toedter.calendar.JDateChooser" name="txtFechaMaximaEmision">
+                  <Properties>
+                    <Property name="dateFormatString" type="java.lang.String" value="yyy-MM-dd"/>
+                  </Properties>
                 </Component>
               </SubComponents>
             </Container>
