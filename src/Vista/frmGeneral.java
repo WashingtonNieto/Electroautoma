@@ -58,6 +58,7 @@ public class frmGeneral extends javax.swing.JFrame {
         txtId = new javax.swing.JTextField();
         lblRegistroCliente = new javax.swing.JLabel();
         lblId = new javax.swing.JLabel();
+        btnLimpiarCamposCliente = new javax.swing.JButton();
         jpMuestras = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         lblDescripcion = new javax.swing.JLabel();
@@ -81,6 +82,7 @@ public class frmGeneral extends javax.swing.JFrame {
         btnBorrarMuestra = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         tblMuestras = new javax.swing.JTable();
+        btnLimpiarCamposMuestra = new javax.swing.JButton();
         jpSeguimiento = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -156,6 +158,13 @@ public class frmGeneral extends javax.swing.JFrame {
 
         lblId.setText("Id");
 
+        btnLimpiarCamposCliente.setText("Limpiar Campos");
+        btnLimpiarCamposCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLimpiarCamposClienteActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -194,7 +203,9 @@ public class frmGeneral extends javax.swing.JFrame {
                                 .addComponent(btnActualizarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(41, 41, 41)
                                 .addComponent(btnBorrarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 149, Short.MAX_VALUE)))
+                        .addGap(18, 18, 18)
+                        .addComponent(btnLimpiarCamposCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 16, Short.MAX_VALUE)))
                 .addGap(21, 21, 21))
         );
         jPanel1Layout.setVerticalGroup(
@@ -229,8 +240,9 @@ public class frmGeneral extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblCorreo))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
+                    .addComponent(lblCorreo)
+                    .addComponent(btnLimpiarCamposCliente))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnCrearCliente)
                     .addComponent(btnBuscarCliente)
@@ -318,6 +330,13 @@ public class frmGeneral extends javax.swing.JFrame {
         ));
         jScrollPane2.setViewportView(tblMuestras);
 
+        btnLimpiarCamposMuestra.setText("Limpiar Campos");
+        btnLimpiarCamposMuestra.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLimpiarCamposMuestraActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -325,38 +344,37 @@ public class frmGeneral extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGap(323, 323, 323)
+                        .addComponent(lblRegistroMuestra))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(172, 172, 172)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(323, 323, 323)
-                                .addComponent(lblRegistroMuestra))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(172, 172, 172)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(lblCodigoMuestra)
-                                            .addComponent(lblCodigoInforme)
-                                            .addComponent(lblCodigoUsuario)
-                                            .addComponent(lblFechaIngreso)
-                                            .addComponent(lblFechaMaximaEmision))
-                                        .addGap(61, 61, 61)
-                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(txtIdInforme, javax.swing.GroupLayout.PREFERRED_SIZE, 344, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(txtIdMuestra, javax.swing.GroupLayout.PREFERRED_SIZE, 344, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(txtReferencia, javax.swing.GroupLayout.PREFERRED_SIZE, 344, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(txtIdUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 344, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(txtFechaIngreso, javax.swing.GroupLayout.PREFERRED_SIZE, 344, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(txtFechaMaximaEmision, javax.swing.GroupLayout.PREFERRED_SIZE, 344, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                    .addComponent(lblDescripcion)
-                                    .addComponent(lblReferencia)
-                                    .addComponent(txtDescripcion))))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING))
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lblCodigoMuestra)
+                                    .addComponent(lblCodigoInforme)
+                                    .addComponent(lblCodigoUsuario)
+                                    .addComponent(lblFechaIngreso)
+                                    .addComponent(lblFechaMaximaEmision))
+                                .addGap(61, 61, 61)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtIdInforme, javax.swing.GroupLayout.PREFERRED_SIZE, 344, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtIdMuestra, javax.swing.GroupLayout.PREFERRED_SIZE, 344, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtReferencia, javax.swing.GroupLayout.PREFERRED_SIZE, 344, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtIdUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 344, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtFechaIngreso, javax.swing.GroupLayout.PREFERRED_SIZE, 344, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtFechaMaximaEmision, javax.swing.GroupLayout.PREFERRED_SIZE, 344, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(lblDescripcion)
+                            .addComponent(lblReferencia)
+                            .addComponent(txtDescripcion))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnLimpiarCamposMuestra, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addGap(39, 39, 39)
                 .addComponent(btnCrearMuestra, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 94, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnBuscarMuestra, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(88, 88, 88)
                 .addComponent(btnActualizarMuestra, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -396,7 +414,9 @@ public class frmGeneral extends javax.swing.JFrame {
                 .addGap(16, 16, 16)
                 .addComponent(lblDescripcion)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(txtDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(txtDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnLimpiarCamposMuestra))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnCrearMuestra)
@@ -431,7 +451,7 @@ public class frmGeneral extends javax.swing.JFrame {
         jpSeguimiento.setLayout(jpSeguimientoLayout);
         jpSeguimientoLayout.setHorizontalGroup(
             jpSeguimientoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 858, Short.MAX_VALUE)
+            .addGap(0, 869, Short.MAX_VALUE)
         );
         jpSeguimientoLayout.setVerticalGroup(
             jpSeguimientoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -473,7 +493,7 @@ public class frmGeneral extends javax.swing.JFrame {
     private void btnBuscarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarClienteActionPerformed
         // TODO add your handling code here:
 
-        //borrar campos
+        
         //borrarCamposFormulario();
         int id = Integer.parseInt(txtId.getText());
         Cliente cliente = controladorCliente.findCliente(id);
@@ -580,15 +600,55 @@ public class frmGeneral extends javax.swing.JFrame {
 
     private void btnBuscarMuestraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarMuestraActionPerformed
         // TODO add your handling code here:
+        //borrarCamposFormulario();
+        int id = Integer.parseInt(txtIdMuestra.getText());
+        Muestra muestra = controladorMuestra.findMuestra(id);
+        if (muestra == null) {
+            JOptionPane.showMessageDialog(this, "La muestra no fue encontrada!");
+        } else {
+            txtIdInforme.setText(String.valueOf(muestra.id_informe));
+            txtReferencia.setText(muestra.referencia);
+            txtIdUsuario.setText(String.valueOf(muestra.id_usuario));
+            txtFechaIngreso.setText(muestra.fecha_ingreso);
+            txtFechaMaximaEmision.setText(muestra.fecha_max_emision);
+            txtDescripcion.setText(muestra.descripcion);
+        }
     }//GEN-LAST:event_btnBuscarMuestraActionPerformed
 
     private void btnActualizarMuestraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarMuestraActionPerformed
         // TODO add your handling code here:
+        int id = Integer.parseInt(txtIdMuestra.getText());
+        String nombre = txtIdInforme.getText();
+        String nit = txtReferencia.getText();
+        String contacto = txtIdUsuario.getText();
+        String telefono = txtFechaIngreso.getText();
+        String direccion = txtFechaMaximaEmision.getText();
+        String email = txtDescripcion.getText();
+
+        boolean seActualizo = controladorCliente.updateCliente(id, nombre, nit, contacto, telefono, direccion, email);
+        if (seActualizo) {
+            JOptionPane.showMessageDialog(this, "El cliente se actualizó correctamente");
+        } else {
+            JOptionPane.showMessageDialog(this, "Hubo un error al actualizar el cliente");
+        }
+
+        llenarTablaClientes();
     }//GEN-LAST:event_btnActualizarMuestraActionPerformed
 
     private void btnBorrarMuestraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBorrarMuestraActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnBorrarMuestraActionPerformed
+
+    private void btnLimpiarCamposMuestraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarCamposMuestraActionPerformed
+        // TODO add your handling code here:
+            
+        limpiarCamposMuestras();
+    }//GEN-LAST:event_btnLimpiarCamposMuestraActionPerformed
+
+    private void btnLimpiarCamposClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarCamposClienteActionPerformed
+        // TODO add your handling code here:
+        limpiarCamposCliente();
+    }//GEN-LAST:event_btnLimpiarCamposClienteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -667,6 +727,30 @@ public class frmGeneral extends javax.swing.JFrame {
         tblMuestras.setModel(modelo);
     }
 
+    public void limpiarCamposMuestras(){
+        
+            txtIdMuestra.setText("");
+            txtIdInforme.setText("");
+            txtReferencia.setText("");
+            txtIdUsuario.setText("");
+            txtFechaIngreso.setText("");
+            txtFechaMaximaEmision.setText("");
+            txtDescripcion.setText("");
+        
+            txtIdMuestra.requestFocus();            
+    }
+    public void limpiarCamposCliente(){
+        
+            txtId.setText("");
+            txtNombre.setText("");
+            txtNit.setText("");
+            txtContacto.setText("");
+            txtTelefono.setText("");
+            txtDireccion.setText("");
+            txtEmail.setText("");
+        
+            txtId.requestFocus();            
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnActualizarCliente;
     private javax.swing.JButton btnActualizarMuestra;
@@ -676,6 +760,8 @@ public class frmGeneral extends javax.swing.JFrame {
     private javax.swing.JButton btnBuscarMuestra;
     private javax.swing.JButton btnCrearCliente;
     private javax.swing.JButton btnCrearMuestra;
+    private javax.swing.JButton btnLimpiarCamposCliente;
+    private javax.swing.JButton btnLimpiarCamposMuestra;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
