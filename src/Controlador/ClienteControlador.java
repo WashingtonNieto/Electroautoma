@@ -51,8 +51,4 @@ public class ClienteControlador {
         Cliente cliente = new Cliente();
         return cliente.select();
     }
-    
-    
-    
-    
 }

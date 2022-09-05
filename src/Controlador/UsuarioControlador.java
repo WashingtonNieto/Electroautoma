@@ -4,10 +4,7 @@
  */
 package Controlador;
 
-import Modelo.Cliente;
 import Modelo.Usuario;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 /**
@@ -21,5 +18,30 @@ public class UsuarioControlador {
         Usuario usuario = new Usuario();
         return usuario.select();
     }
+
+    public boolean updateUsuario(int id, String nombre, String apellido, String correo){
+        Usuario usuario = new Usuario();
+        usuario.id = id;
+        usuario.nombre = nombre;
+        usuario.apellido = apellido;
+        usuario.correo = correo;
+        return usuario.update();
+    }
+
+    public boolean deleteUsuario(int id){
+        Usuario usuario = new Usuario();
+        return usuario.delete(id);
+    }      
     
-}
+    public Usuario findUsuario(int id){
+        Usuario usuario = new Usuario();
+        return usuario.find(id);
+    } 
+
+    
+    public ArrayList<Usuario> SelectUsuario(){
+        Usuario usuario = new Usuario();
+        return usuario.select();
+    }
+
+}   

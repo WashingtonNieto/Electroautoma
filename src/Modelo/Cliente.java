@@ -10,13 +10,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
-/**
- *
- * @author washi
- */
 public class Cliente extends DbData{
-
-
     public int id;
     public String nombre;
     public String nit;
